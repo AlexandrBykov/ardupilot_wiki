@@ -5,7 +5,7 @@ Setting up SITL on Linux
 ========================
 
 This page describes how to setup the :ref:`SITL (Software In The Loop) <sitl-simulator-software-in-the-loop>` on Linux. The specific
-commands were tested on Ubuntu 12.10, 13.04 and 14.10.
+commands were tested on Ubuntu 12.10, 13.04, 14.10 and 16.04.
 
 Overview
 ========
@@ -53,6 +53,12 @@ In the same directory (your home directory) run these commands:
     git clone git://github.com/tridge/jsbsim.git
     sudo apt-get install libtool automake autoconf libexpat1-dev
 
+Then execute next commands:
+
+    cd jsbsim
+    ./autogen.sh --enable-libraries
+    make
+
 If you are getting an error message saying you need a newer version of
 JSBSim then you can update it like this:
 
@@ -74,6 +80,8 @@ this:
     sudo apt-get install python-matplotlib python-serial python-wxgtk2.8 python-wxtools python-lxml
     sudo apt-get install python-scipy python-opencv ccache gawk git python-pip python-pexpect
     sudo pip install future pymavlink MAVProxy
+
+On Ubuntu 16.04 please use python-wxgtk3.0 instead of python-wxgtk2.8
 
 Or if you are on a RPM based system (such as Fedora) run this:
 
